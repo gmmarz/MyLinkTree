@@ -1,0 +1,135 @@
+:root{
+    --bg-black: #141414;
+    --bg-gray:#1f1f1f;
+    --bg-lightGray:#333333;
+    --fg-white: #ffffff;
+    --hv-green:#c5f82a;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+
+    font-family: "Inter", sans-serif;
+    color: var(--fg-white);
+
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    /* size */
+    width: 100%;
+    height: 100vh;
+
+    /* Display setting, position */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* colors */
+    background-color: var(--bg-black);
+
+    /* Transition */
+
+}
+
+.card{
+        /* size */
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        margin-inline: 20px;
+        padding: 48px;
+        gap: 32px;
+
+        /* Display setting, position */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        /* colors */
+        background-color: var(--bg-gray);
+
+    
+        /* Transition */
+}
+
+.profile{
+          /* display configuration */
+          display: flex;
+          flex-direction: column;
+          /* alin items alinham as tags */
+          /* aling text irá alinhar os textos. */
+          align-items: center;
+          gap: 12px;
+
+}
+
+.profile-pic{
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.profile p{
+    color: var(--hv-green);
+    font-weight: 700;
+}
+
+.card nav,
+.card ul,
+.card ul li,
+.card ul li a{
+    width: 100%;
+}
+
+.card nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card nav ul li a{
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: var(--bg-lightGray);
+
+    font-weight: 600;
+
+    padding: 16px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.card nav ul li a:hover{
+    background-color: var(--hv-green);
+    color: var(--bg-lightGray);
+}
+
+.card nav ul li a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.card nav ul li a i::before{
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 100%;
+    transform: translate(-50%);
+    width: 10px;
+    height: 10px;
+    background: #0835ec;
+    border: 2px solid var(--hv-green);
+    transition: 0.5s;
+
+}
