@@ -110,26 +110,45 @@ body{
 }
 
 .card nav ul li a:hover{
-    background-color: var(--hv-green);
-    color: var(--bg-lightGray);
+    /* background-color: var(--hv-green); */
+    color: var(--hv-green);
 }
 
-.card nav ul li a i{
-    position: absolute;
-    inset: 0;
-    display: block;
+.card nav ul li {
+    position: relative; /* Adiciona posicionamento relativo para que o quadrado fique relativo a este elemento */
 }
 
-.card nav ul li a i::before{
+.card nav ul li::before {
+    content: ''; /* Adiciona conteúdo vazio para o elemento pseudo-classe */
+    position: absolute; /* Posicionamento absoluto para estar sobreposto ao elemento pai */
+    top: -4px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: #27282c; /* Cor do quadrado */
+    border: 2px solid var(--fg-white);
+    transition: transform 0.9s; /* Transição para a animação */
+}
+
+.card nav ul li:hover::before {
+    
+    transform: translateX(-400px) rotate(45deg); /* Move o quadrado para a esquerda */
+    box-shadow: 40px 40px var(--fg-white);
+}
+
+.card nav ul li::after{
     content: '';
     position: absolute;
-    top: -6px;
-    left: 100%;
+    bottom: -4px;
     transform: translate(-50%);
     width: 10px;
     height: 10px;
-    background: #0835ec;
-    border: 2px solid var(--hv-green);
-    transition: 0.5s;
+    background: #27282c;
+    border: 2px solid var(--fg-white);
+    transition: 0.9s;
+}
 
+.card nav ul li:hover::after{
+    transform: translate(400px) rotate(-45deg);
+    box-shadow: 40px -40px var(--fg-white);
 }
